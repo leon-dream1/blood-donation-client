@@ -1,21 +1,15 @@
 import React, { useContext, useState } from 'react';
 import './Login.css';
 import Navbar from '../Home/Navbar/Navbar';
-import { Navigate, json, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../App';
+import { Toaster, toast } from 'alert';
 
 const Login = () => {
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useContext(userContext);
-    //const [role, setRole] = useState('Donor');
 
     const navigate = useNavigate();
-    // let location = useLocation();
-    //let history = useHistory();
-
-
-    //let { from } = location.state || { from: { pathname: "/" } };
-
     let userInfo = { ...user };
     const handleInput = (e) => {
 
@@ -57,7 +51,7 @@ const Login = () => {
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            alert("Account Created Successfully");
+                            toast.success("Account Created Successfully");
                             navigate(`/${user.role}Dashboard`);
                         }
                         else {
@@ -67,13 +61,14 @@ const Login = () => {
 
             }
             else {
-                alert('Password Does not match')
+                toast.error('Password Does not match');
             }
         }
 
         else {
             if (user.email && user.password) {
                 if(user.email == 'admin@gmail.com' && user.password == 'admin'){
+                    alert('Log In SuccessFully');
                     navigate('/adminDashboard');
                 }
                 else{
@@ -94,7 +89,7 @@ const Login = () => {
                            setUser(result[0]);
                         }
                         else {
-                            alert('Password Does not match');
+                            toast.error('Password Does not match');
                         }
 
                     })
@@ -107,6 +102,7 @@ const Login = () => {
         <div>
             <Navbar></Navbar>
             <div className="login container">
+            <Toaster position='top-center'/>
                 <form onSubmit={handleSubmit}>
                     {newUser && <div class="form-group mb-4">
                         <input type="text" name='name' onBlur={handleInput} class="form-control" id="exampleInputEmail1" placeholder="Enter Your Name" required />
