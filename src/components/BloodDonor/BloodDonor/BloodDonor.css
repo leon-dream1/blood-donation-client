@@ -1,0 +1,5 @@
+.sidebar{
+    background: linear-gradient(to bottom, rgb(198, 30, 30), red);
+    height: 100vh;
+    overflow-x: hidden !important;
+}

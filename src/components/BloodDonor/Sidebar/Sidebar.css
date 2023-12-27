@@ -1,0 +1,7 @@
+.sidebar_link a{
+    text-decoration: none !important;
+    display: block;
+    color: #fff;
+    padding: 50px  50px 20px 50px;
+    font-size: 25px;
+}

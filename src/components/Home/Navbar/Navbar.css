@@ -1,0 +1,15 @@
+.bg_color{
+    background-color: #EA062B;
+}
+.navbar .navbar-brand{
+    font-family:fantasy;
+    font-size: 30px;
+    font-style: italic;
+}
+.navbar-nav  .nav-item a{
+    font-size: 18px;
+    padding:0 30px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}

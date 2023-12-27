@@ -1,0 +1,26 @@
+.login{
+    margin-top: 140px;
+    width: 400px;
+    /* height: 400px; */
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 40px 40px;
+    border-radius: 10px;
+}
+.login_button{
+    width: 320px;
+    margin-top: 10px;
+    height: 40px;
+    background-color: #EA062B;
+    color: #fff;
+    font-size: 20px;
+  border: none;
+
+}
+.create_lg_btn{
+    text-decoration: underline !important;
+    color: blue;
+    cursor: pointer;
+    padding-bottom: 30px;
+    display: inline-block;
+}
